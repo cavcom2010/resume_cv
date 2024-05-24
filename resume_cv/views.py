@@ -1,6 +1,36 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.http import HttpResponse
 from django.urls import path
+from .forms import ContactForm
+from django.core.mail import send_mail
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'index.html',{'form':ContactForm })
+
+def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(data=request.POST)
+        if form.is_valid():
+            full_name = form.cleaned_data['full_name']
+            email = form.cleaned_data['email']
+            message = form.cleaned_data['message']
+
+            send_mail(
+                subject=f"Message from {full_name.title()}",
+                message = message,
+                from_email = email,
+                recipient_list=['calvin2411@hotmail.com'],
+                fail_silently=False
+            )
+            return redirect('index')
+    else:
+        form = ContactForm()
+    return render(request, 'resume_cv/contact.html', {'form':form})
+
+
+
+
+
+
+

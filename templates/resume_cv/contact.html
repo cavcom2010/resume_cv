@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="container">
+    <form action="{% url 'contact' %}" method="POST">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit">Submit</button>
+
+    <button type="reset">Reset</button>
+
+    
+    
+    
+
+    </form>
+</div>
+
+{% endblock content %}
