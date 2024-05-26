@@ -17,16 +17,16 @@ def contact(request):
             message = form.cleaned_data['message']
 
             send_mail(
-                subject=f"Message from {full_name.title()}",
+                subject=f"Message from {full_name.title()} at email {email}.",
                 message = message,
-                from_email = email,
+                from_email = 'calvin2411@hotmail.com',
                 recipient_list=['calvin2411@hotmail.com'],
                 fail_silently=False
             )
             return redirect('index')
     else:
         form = ContactForm()
-    return render(request, 'resume_cv/contact.html', {'form':form})
+    return render(request, 'index.html', {'form':form})
 
 
 

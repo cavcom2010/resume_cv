@@ -293,10 +293,10 @@
 
                 </div>
 
-           	 </div><!-- col -->
+           	 </div> col -->
         	<!-- </div>row -->
         <!-- </div>container -->
-    <!-- </section> --> -->
+    <!-- </section> -->
 
   <div class="mb-3">
      <section class="contact section-padding pt-0" id="contact">
@@ -311,6 +311,7 @@
                     <!-- <input type="text" class="form-control" name="cf-name" id="cf-name" placeholder="Your Name">
 
                     <label for="cf-name" class="webform-label">Full Name</label> -->
+                    {{ form.full_name.label_tag }}
                     {{ form.full_name }}
 
 
@@ -320,6 +321,7 @@
                     <!-- <input type="email" class="form-control" name="cf-email" id="cf-email" placeholder="Your Email">
 
                     <label for="cf-email" class="webform-label">Your Email</label> -->
+                    {{ form.email.label_tag }}
                     {{ form.email }}
                 </div>
 
@@ -327,6 +329,7 @@
                     <!-- <textarea class="form-control" rows="5" name="cf-message" id="cf-message" placeholder="Your Message"></textarea>
 
                     <label for="cf-message" class="webform-label">Message</label> -->
+                    {{ form.message.label_tag }}
                     {{ form.message }}
                 </div>
 
