@@ -20,8 +20,8 @@ def contact(request):
                 subject=f"Message from {full_name.title()} at email {email}.",
                 message = message,
                 from_email = 'calvin2411@hotmail.com',
-                recipient_list=['calvin2411@hotmail.com'],
-                fail_silently=False
+                recipient_list=['calvin2411@hotmail.com', 'calvin2411@yahoo.co.uk'],
+                fail_silently=False, 
             )
             return redirect('index')
     else:
