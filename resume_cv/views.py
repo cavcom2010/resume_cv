@@ -3,10 +3,12 @@ from django.http import HttpResponse
 from django.urls import path
 from .forms import ContactForm
 from django.core.mail import send_mail
+from .models import ProgrammingLanguage
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html',{'form':ContactForm })
+    language = ProgrammingLanguage.objects.all()
+    return render(request, 'index.html',{'form':ContactForm, 'language':language })
 
 def contact(request):
     if request.method == 'POST':
