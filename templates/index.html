@@ -54,7 +54,7 @@
                       <!-- <video>
                         <source src="static/images/ben.mp4" type="video/mp4">
                       </video> -->
-                      <img src="static/images/calvin_mazhindu/IMG_1986.jpg" class="img-fluid" alt="Ben Resume HTML Template">
+                      <img src="static/images/calvin_mazhindu/IMG_1986.jpg" class="img-fluid" alt="Calvin Mazhindu profile photo">
                   </div>
 
                    <div class="d-flex flex-column justify-content-center align-items-center col-lg-7 col-md-7 col-12">
@@ -100,19 +100,24 @@
                 </div>
 
                 <div class="col-lg-5 mx-auto col-md-6 col-12">
-                    <img src="static/images/true-agency.jpg" class="about-image img-fluid" alt="Ben's Resume HTML Template">
-                </div>
+                    <!-- <img src="static/images/true-agency.jpg" class="about-image img-fluid" alt="Ben's Resume HTML Template"> -->
+                    <video controls width="300">
+                      <source src="static/videos/31468-386957672_medium.mp4" type="video/mp4">
+                      <!-- <source src="/home/cmazh/Downloads/28320-369325356_medium.webm" type="video/webm"> -->
+                      <!-- <a href="static/videos/31468-386957672_medium.mp4" type="video/mp4">Video</a> -->
+                    </video>
+                </div> <!--A video needs to be here!-->
 
             </div>
             <div class="row about-third">
             	<div class="col-lg-4 col-md-4 col-12">
-                {% for x in language %}
+                <!-- {% for x in language %}
                   <ul>
                     <li><p>Language: {{ x.name }}</p></li>
                     <li><p>Proficiency: {{ x.level }}</p></li>
                     <li><p>Text: {{ x.text }}</p></li>
                   </ul>
-                {% endfor %}
+                {% endfor %} -->
                 <!-- <h3>For all your online werb development needs.</h3> -->
                 <!-- <p>Sed eu risus tincidunt, finibus dolor non, gravida ex. Donec lacinia mi nec erat tempus, vel consectetur ante scelerisque. Ut blandit, risus in venenatis ultricies, lacus tellus fermentum.</p> -->
                 </div>
@@ -389,5 +394,18 @@
       </div>
     </section>
   </div>
+
+  <div>
+    {% for x in language %}
+    <div class="language-box">
+      <ul>
+        <li><p>Language: {{ x.name }}</p></li>
+        <li><p>Proficiency: {{ x.level }}</p></li>
+        <li><p>Text: {{ x.text }}</p></li>
+      </ul>
+    </div>
+    {% endfor %}
+  </div>
+  
 
 {% endblock content %}

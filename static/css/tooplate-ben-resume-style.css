@@ -100,9 +100,9 @@ https://www.tooplate.com/view/2120-ben-resume
   }
 
   p {
-    color: var(--p-color);
+    /* color: var(--p-color); */  /* new */
     font-size: var(--p-font-size);
-    font-weight: var(--font-weight-light);
+    /* font-weight: var(--font-weight-light); */
     letter-spacing: 0.3px;
     line-height: 2em;
   }
@@ -351,6 +351,7 @@ https://www.tooplate.com/view/2120-ben-resume
 
   .about-image {
     border-radius: var(--border-radius-small);
+    border-color: aquamarine; /* new */
   }
 
   .profile-list li {
@@ -652,4 +653,17 @@ https://www.tooplate.com/view/2120-ben-resume
     display: flex;
   }
 
-  
+.language-box {
+  display: inline-flex;
+  flex-wrap: wrap;
+  border: 1px solid;
+  border-style: dotted;
+  max-width: 30%;
+  background-color: var(--white-color);
+  padding: 20px;
+  margin: 20px;
+}
+
+/* .language-box ul p {
+  margin: 5px 0;
+} */
