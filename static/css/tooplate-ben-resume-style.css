@@ -655,15 +655,22 @@ https://www.tooplate.com/view/2120-ben-resume
 
 .language-box {
   display: inline-flex;
-  flex-wrap: wrap;
   border: 1px solid;
-  border-style: dotted;
+  border-style: none;
   max-width: 30%;
   background-color: var(--white-color);
-  padding: 20px;
-  margin: 20px;
+  padding: 1em;
+  margin: 0.5em;
+  margin: 10px auto;
+  min-width: 25em;
+  max-width: 45em;
 }
 
 /* .language-box ul p {
   margin: 5px 0;
 } */
+
+.language-box .proficiency {
+  display: inline-block;
+  align-items: center;
+}
