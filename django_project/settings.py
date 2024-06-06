@@ -9,8 +9,9 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-
 from pathlib import Path
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -33,6 +34,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
 
     'resume_cv',
+    'sorl.thumbnail',
 
 
     'django.contrib.admin',
@@ -155,3 +157,6 @@ EMAIL_HOST_USER = 'calvin2411@hotmail.com'
 EMAIL_HOST_PASSWORD = 'codermazhindu123@'
 
 DEFAULT_FROM_EMAIL = 'calvin2411@hotmail.com'
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"

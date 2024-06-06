@@ -3,14 +3,24 @@ from django.http import HttpResponse
 from django.urls import path
 from .forms import ContactForm
 from django.core.mail import send_mail
-from .models import ProgrammingLanguage
+from .models import ProgrammingLanguage, Testimonial
 
 # Create your views here.
 def index(request):
+    """This view contains all the the language and the form models"""
+    """and the main index.html file or homepage."""
     language = ProgrammingLanguage.objects.all()
-    return render(request, 'index.html',{'form':ContactForm, 'language':language })
+    testimonials = Testimonial.objects.order_by('-date')
+    context = {
+        'form': ContactForm,
+        'language': language,
+        'testimonials': testimonials,
+
+    }
+    return render(request, 'index.html', context)
 
 def contact(request):
+    """this is a simple form for people to contact the site admin."""
     if request.method == 'POST':
         form = ContactForm(data=request.POST)
         if form.is_valid():
@@ -29,6 +39,11 @@ def contact(request):
     else:
         form = ContactForm()
     return render(request, 'index.html', {'form':form})
+
+def add_testimonial(request):
+    """a view to render the function to add a new testimonial."""
+    pass
+
 
 
 
