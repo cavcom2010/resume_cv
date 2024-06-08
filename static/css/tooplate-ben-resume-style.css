@@ -655,15 +655,14 @@ https://www.tooplate.com/view/2120-ben-resume
 
 .language-box {
   display: inline-flex;
-  border: 1px solid;
-  border-style: solid;
+  border: none;
   max-width: 30%;
   background-color: var(--white-color);
   padding: 1em;
   margin: 0.5em;
   margin: 10px auto;
   min-width: 25em;
-  max-width: 45em;
+  max-width: 35em;
 }
 
 /* .language-box ul p {
@@ -673,6 +672,7 @@ https://www.tooplate.com/view/2120-ben-resume
 .language-box .proficiency {
   display: inline-block;
   align-items: center;
+  padding: 0.5rem;
 }
 
 .testimonial-image {
@@ -687,4 +687,8 @@ https://www.tooplate.com/view/2120-ben-resume
   width: 200px;
   border-radius: 40%;
   object-fit: cover;
+}
+
+p {
+  margin: 0em;
 }
