@@ -34,7 +34,6 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
 
     'resume_cv',
-    'sorl.thumbnail',
 
 
     'django.contrib.admin',

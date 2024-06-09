@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 
 {% load static %}
-{% load thumbnail %}
 
 {% block content %}
 
@@ -412,10 +411,7 @@
 
   <div class="testimonial">
     {% for x in testimonials %}
-      <!-- <div>
-        {% thumbnail item.image "100x100" crop="center" as im %}
-          <img src="{{ im.url }}" alt="{{ im.name }}" width="{{ im.width }}" height="{{ im.height }}">
-        {% endthumbnail %} -->
+      
         <div >
           <img src="{{ x.image.url }}" alt="{{ x.name }}" class="testimonial-image">
         </div>
