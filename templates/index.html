@@ -200,11 +200,16 @@
     {% endfor %}
   </div>
 
+  <div>
+    <a href="{% url 'add_testimonial' %}">Add Testimonial</a>
+    <button name="submit" >Confirm</button>
+  </div>
+  
   <div class="testimonial">
     {% for x in testimonials %}
 
         <div >
-          <img src="{{ x.image.url }}" alt="{{ x.name }}" class="testimonial-image">
+          <img src="{{ x.url }}" alt="{{ x.name }}" class="testimonial-image">
         </div>
         <p>{{ x.name| title }}</p>
         <p>{{  x.profession }}</p>

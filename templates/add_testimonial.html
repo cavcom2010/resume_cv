@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div>
+    <form action="{% url 'add_testimonial' %}" method='post' class="add-testimonial">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button name="submit">Add Testimonial</button>
+
+    </form>
+</div>
+
+{% endblock content %}

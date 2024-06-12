@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.urls import path
-from .forms import ContactForm
+from .forms import ContactForm, TestimonialForm
 from django.core.mail import send_mail
 from .models import ProgrammingLanguage, Testimonial
 
@@ -42,12 +42,15 @@ def contact(request):
 
 def add_testimonial(request):
     """a view to render the function to add a new testimonial."""
-    pass
+    if request.method == 'POST':
+        form = TestimonialForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+        else:
+            form = TestimonialForm()
 
-
-
-
-
-
+    context = {'form': TestimonialForm}    
+    return render(request, 'add_testimonial.html', context)
 
 
